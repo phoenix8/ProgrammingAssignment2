@@ -25,7 +25,7 @@ cacheSolve <- function(g, x, ...) {
     ## Get the cached matrix and see if it has changed
     ## if the matrix is the same, return the cached inverse
     matrix <- g$get()
-    if (all.equal(matrix,x)) {    #matrix is the same, retrieve the cached inverse
+    if (identical(matrix,x)) {    #matrix is the same, retrieve the cached inverse
         imatrix <- g$getinverse()
     }
     else {    # the matrix is different, calculate the inverse
@@ -33,3 +33,4 @@ cacheSolve <- function(g, x, ...) {
     }
     imatrix #return the inverse of 'x'
 }
+
